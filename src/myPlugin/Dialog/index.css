@@ -1,0 +1,138 @@
+@keyframes loading_1 {
+  0% {
+    transform: translate(-5px, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(-5px, 0);
+  }
+}
+@keyframes loading_2 {
+  0% {
+    transform: translate(5px, 0);
+  }
+  50% {
+    transform: translate(-10px, 0);
+  }
+  100% {
+    transform: translate(5px, 0);
+  }
+}
+@keyframes Animations {
+  0% {
+    transform: scale(0,0);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
+.animations{
+  animation: Animations .3s ease-out;
+}
+button {
+  width: 32%;
+  display: block;
+  background-color: #87cefa;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 1em 0.2em 0;
+  padding: 0.3em 0.3em;
+
+  /*button自定义的边框*/
+  border: 0px;
+  /*消除默认点击蓝色边框效果*/
+  outline: none;
+}
+.Dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  color: #fff;
+  /* 使用flex布局 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Dialog-window {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1em;
+  /* width: 60%; */
+  /* animation: Animations .3s ease-out; */
+}
+.Dialog-window-header {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Dialog-window-header.warning {
+  transform: rotate(90deg);
+}
+.Dialog-window-header.warning:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 5px;
+  background-color: #fff;
+}
+.Dialog-window-header.warning:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  margin-left: 5px;
+}
+.Dialog-window-header.ok:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 10px;
+  border: 1px solid #fff;
+  border-width: 0 0 2px 2px;
+  transform: rotate(-50deg);
+}
+.Dialog-window-header.loading:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: yellow;
+  animation: loading_1 0.8s infinite;
+}
+.Dialog-window-header.loading:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  animation: loading_2 0.8s infinite;
+}
+
+.Dialog-window-content {
+  text-align: center;
+  margin-top: 1em;
+}
+.Dialog-window-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Dialog-window-footer button {
+  font-size: 16px;
+}
